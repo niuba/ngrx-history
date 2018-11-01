@@ -1,8 +1,8 @@
 import { ActionReducer, ActionReducerMap } from '@ngrx/store';
 import {
   History,
-  undoableFactory,
-  newHistory
+  newHistory,
+  undoable
 } from '../../projects/ngrx-history/src/public_api';
 import * as AppActions from './app.actions';
 
@@ -28,15 +28,13 @@ export const counterReducer: ActionReducer<number, AppActions.UnionAction> = (
   }
 };
 
-const undoable = undoableFactory<number>({
-  limit: 3
-});
-
 export const undoableCounterReducer: ActionReducer<
   History<number>,
   AppActions.UnionAction
 > = (state = initialState.counter, action) => {
-  return undoable(counterReducer)(state, action);
+  return undoable(counterReducer, {
+    limit: 3
+  })(state, action);
 };
 
 export const reducer: ActionReducerMap<State, AppActions.UnionAction> = {

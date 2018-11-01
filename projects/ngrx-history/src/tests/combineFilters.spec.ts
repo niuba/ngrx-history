@@ -1,4 +1,4 @@
-import { combineFilters, History, newHistory } from '../lib/index';
+import { combineFilters,  newHistory } from '../lib/index';
 runTestCombineFilters();
 function runTestCombineFilters() {
   describe('Combine Filters', () => {

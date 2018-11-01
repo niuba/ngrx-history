@@ -2,18 +2,18 @@
 [![codecov](https://codecov.io/gh/niuba/ngrx-history-lib/branch/master/graph/badge.svg)](https://codecov.io/gh/niuba/ngrx-history-lib)
 [![CircleCI](https://circleci.com/gh/niuba/ngrx-history-lib.svg?style=svg)](https://circleci.com/gh/niuba/ngrx-history-lib)
 
-English | [简体中文](README-zh_CN.md)
+简体中文 | [English](README.md)
 
-An redo/undo library on [@ngrx/store](https://github.com/ngrx/platform).
-According to the [redux-undo](https://github.com/omnidan/redux-undo) modification，the function is basically the same as the redux-undo@1.0.0-beta7.
-The test code is also from [redux-undo](https://github.com/omnidan/redux-undo) (since the Slices are not used, this part of the test code has been removed)。
+在 [@ngrx/store](https://github.com/ngrx/platform) 上的 redo/undo 库。
+根据 [redux-undo](https://github.com/omnidan/redux-undo) 修改，功能和版本 redux-undo@1.0.0-beta7 基本一致。
+测试代码也来自 [redux-undo](https://github.com/omnidan/redux-undo) (由于没有使用 Slices ，所以这部分的测试代码删去了)。
 
-## Installation
+## 安装
 ```
 npm install --save ngrx-history
 ```
 
-## Usage
+## 使用
 ```typescript
 import { undoable } from 'ngrx-history';
 
@@ -36,5 +36,5 @@ export const undoableCounterReducer = undoable(counterReducer, {
 });
 ```
 
-## More Information
-[redux-undo](https://github.com/omnidan/redux-undo)
+## 更多信息
+请浏览 [redux-undo](https://github.com/omnidan/redux-undo)

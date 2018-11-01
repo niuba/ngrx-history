@@ -7,7 +7,8 @@ import {
   ActionTypes,
   ActionCreators,
   newHistory,
-  isHistory
+  isHistory,
+  undoable
 } from '../lib/index';
 import {
   ActionReducer,
@@ -35,12 +36,6 @@ interface State {
   counter: History<number>;
 }
 
-function undoable<T, V extends Action = Action>(
-  reducer: ActionReducer<T, V>,
-  undoableConfig: UndoableConFig<T> = {}
-) {
-  return undoableFactory<T, V>(undoableConfig)(reducer);
-}
 const decrementActions = ['DECREMENT'];
 runTests('Default config');
 runTests('Never skip reducer', {

@@ -245,3 +245,10 @@ export function undoableFactory<T, V extends Action = Action>(
     };
   };
 }
+
+export function undoable<T, V extends Action = Action>(
+  reducer: ActionReducer<T, V>,
+  undoableConfig: UndoableConFig<T> = {}
+) {
+  return undoableFactory<T, V>(undoableConfig)(reducer);
+}
